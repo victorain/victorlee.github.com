@@ -1,0 +1,88 @@
+
+<head>
+	<STYLE TYPE="text/css" MEDIA="screen, projection"> 
+  	.item{font-size:150%!important;margin-top:1.5em!important;border-top:2px solid #e0e0e0!important;padding-top:.5em!important;color:#6D9D30;}
+		{% if {{page.p-indent}} %}
+		p{text-indent:2em!important;}
+		{% endif %}
+	</STYLE> 
+</head>
+
+<div class='post'>
+  <!--
+  <h1 style='border-bottom:1px solid #CCCCCC !important;padding-bottom:.5em!important;'><a href='{{page.url}}'>{{page.title}}</a></h1>
+  -->
+  <h2 style='border-bottom:1px solid #CCCCCC !important;padding-bottom:.5em!important;margin-top:0em!important;'>{{page.title}}</h2>
+  {% assign cat = page.category %}
+  <span style='padding-bottom:.5em!important;'>
+  	published: {{page.date | date: "%Y-%m-%d"}},
+  	in category: <a href="/archives/{{ cat }}.html"> {{ cat }} </a>
+  </span>
+  
+  <!-- original statement -->
+  <!-- -->
+  {% if {{page.original}} %}
+  <div style='font-style:italic!important;color:#55555!important;margin-top:2px!important;margin-bottom:5px!important;'>
+   原创文章，转载请注明出处:<a href='{{site.url}}' style='text-decoration:none'>victor's blog</a><br/>
+   本文链接:<a href='{{page.url}}' style='text-decoration:none'>{{site.url}}{{page.url}}</a>
+	</div>
+	{% endif %}
+
+  <div class='body'>{{ content }}</div>
+
+</div>
+
+<!-- share to ... -->
+{% if {{page.share-off}} %}
+		<!--
+		trun off share to ... 
+		-->
+{% else %}
+		<!-- JiaThis Button BEGIN -->
+		<div id="jiathis_style_32x32">
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_twitter"></a>
+		<a class="jiathis_button_fb"></a>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_tqq"></a>
+		<a class="jiathis_button_qzone"></a>
+		<a class="jiathis_button_renren"></a>
+		<a class="jiathis_button_feixin"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+		<a class="jiathis_counter_style"></a>
+		</div>
+		<script type="text/javascript" >
+		var jiathis_config={
+			summary:"",
+			hideMore:false
+		}
+		</script>
+		<script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
+		<!-- JiaThis Button END -->
+		
+		<br/>
+		<br/>
+{% endif %}
+
+<!-- discuss -->
+{% if {{page.discuss-off}} %}
+		<!--
+		trun off discuss 
+		-->
+{% else %}
+    <script type="text/javascript" charset="utf-8">
+  		var disqus_url = "http://eeevictor.github.com{{page.url}}";
+  		var disqus_developer = 1;
+		</script>
+
+		<br/>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript" src="http://disqus.com/forums/eeevictor/embed.js"></script>
+		<!-- -->
+		<noscript><a href="http://disqus.com/forums/eeevictor/?url=ref">View the discussion thread.</a></noscript>
+		
+		<!--
+		<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+		-->
+{% endif %}
+

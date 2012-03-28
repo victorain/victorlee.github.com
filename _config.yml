@@ -1,0 +1,9 @@
+destination: ./_site
+server: true
+auto: true
+lsi:         false
+server_port: 4000
+pygments:    true
+markdown:    rdiscount
+permalink:   date
+url: http://eeevictor.github.com
