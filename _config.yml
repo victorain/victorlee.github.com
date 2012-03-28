@@ -6,4 +6,4 @@ server_port: 4000
 pygments:    true
 markdown:    rdiscount
 permalink:   date
-url: http://eeevictor.github.com
+url: http://victorlee.github.com
