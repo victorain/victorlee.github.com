@@ -226,7 +226,6 @@ hc->request = r;
 r->http_connection = hc;
 // c 与 r 关联起来，从现在开始 c 的data就是著名的 ngx_http_request_t  *r 了
 c->data = r;
-// r 与 c 关联起来
 r->connection = c;
 //设置 读事件的 handler 为 ngx_http_process_request_line
 // 并调用事件的 handler
