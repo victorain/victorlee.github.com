@@ -219,9 +219,7 @@ ngx_http_request_t         *r;
 ngx_http_connection_t      *hc;
 
 c = rev->data;
-hc = c->data;
 hc = ngx_pcalloc(c->pool, sizeof(ngx_http_connection_t));
-r = hc->request;
 r = ngx_pcalloc(c->pool, sizeof(ngx_http_request_t));
 // hc 与 r 关联起来
 hc->request = r;
@@ -230,7 +228,7 @@ r->http_connection = hc;
 c->data = r;
 // r 与 c 关联起来
 r->connection = c;
-//设置 事件的 handler 为 ngx_http_process_request_line
+//设置 读事件的 handler 为 ngx_http_process_request_line
 // 并调用事件的 handler
 rev->handler = ngx_http_process_request_line;
 r->read_event_handler = ngx_http_block_reading;
