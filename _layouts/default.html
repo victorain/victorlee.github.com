@@ -46,7 +46,8 @@ desc: 我的学习，我的生活，我的观点
 
       <aside>
       <section>
-      <h3>Who's victor</h3>
+      <h3>Who's victor</h3>   
+	  <div class="indent">
       <img src="/images/victor.jpg"/>
       <p>email:<a href="mailto:eeevictor.lee@gmail.com">eeevictor.lee@gmail.com</a></p>
       <p>twitter:<a href="http://twitter.com/eeevictor">twitter.com/eeevictor</a></p>
@@ -54,6 +55,7 @@ desc: 我的学习，我的生活，我的观点
         <a href="http://github.com/victorlee">github</a>
         <a href="http://www.douban.com/people/eeevictor/">douban</a>
       </p>
+	  </div>
       </section>
 
       <section>
@@ -61,13 +63,17 @@ desc: 我的学习，我的生活，我的观点
       <!-- FEED自动发现标记开始 -->
       <link title="RSS 2.0" type="application/rss+xml" href="http://feed.feedsky.com/victor_3n30" rel="alternate" />
       <!-- FEED自动发现标记结束 -->
+
       <a href="http://feed.feedsky.com/victor_3n30"><img border="0" src="http://img.feedsky.com/images/icon_sub_c1s17_d.gif" alt="feedsky" vspace="2"  style="margin-bottom:3px" ></a><br />
+	  <div class="indent">
       <a href="http://www.zhuaxia.com/add_channel.php?url=http://feed.feedsky.com/victor_3n30" target="_blank"><img border="0" src="http://img.feedsky.com/images/icon_subshot01_zhuaxia.gif" alt="&#25235;&#34430;" vspace="2" style="margin-bottom:3px" ></a><br />
       <!-- Feedsky FEED发布代码结束 -->
+	  </div>
       </section>
 
       <section>
       <h3>Categories</h3>
+	  <div class="indent">
       <ul>
         {% for category in site.categories %}
         <li><a href="/archives/{{category | first}}.html">
@@ -82,6 +88,7 @@ desc: 我的学习，我的生活，我的观点
         	all({{site.posts | size }})</a>
         </li>
       </ul>
+	  </div>
       </section>
 
 			<!--
