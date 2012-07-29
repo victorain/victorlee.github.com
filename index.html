@@ -43,6 +43,6 @@ layout: default
 		</div>
  	{% endif %}
   <div style="color:#666666!important;">{{post.date | date: "%Y-%m-%d"}}</div>
-	{{ post.content | truncatewords:10,"......"}}
+	{{ post.content | truncatehtml:10,"......"}}
   {% endfor %}
 </body>
