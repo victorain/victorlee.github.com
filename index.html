@@ -1,7 +1,53 @@
 ---
 layout: default
 ---
-{% assign page = site.posts.first %}
-{% assign content = page.content %}
-{% include post.html %}
 
+<style type="text/css">
+/* begin style1 */
+A.style1:link {
+	text-decoration: none;
+	color: #336699;
+	background: #EEFFEE;
+}
+A.style1:active {
+	text-decoration: none;
+	color: #336699;
+	background: #EEFFEE;
+}
+A.style1:visited {
+	text-decoration: none;
+	color: #336699; /*666699*/
+	background: #EEFFEE;
+}
+A.style1:hover {
+	text-decoration: none;
+	color: white;
+	background: #003399 ;
+	padding:.2em;
+}
+/* end style1 */
+
+</style>
+
+<head>
+	<STYLE TYPE="text/css" MEDIA="screen, projection"> 
+	  	.firsttiltebackground{background:#EEFFEE!important;padding:.2em!important;}
+		.tiltebackground{background:#EEFFEE!important;padding:.2em!important;margin-top:3em!important;}
+	</STYLE> 
+</head>
+
+<body>
+  {% for post in site.posts limit:10 %}
+	{% if post == site.posts.first %}
+		<div class="firsttiltebackground">
+			<a href='{{post.url}}' class="style1">{{post.title}}</a>
+		</div>
+ 	{% else %}
+		<div class="tiltebackground">
+			<a href='{{post.url}}' class="style1">{{post.title}}</a>
+		</div>
+ 	{% endif %}
+  <div style="color:#666666!important;">{{post.date | date: "%Y-%m-%d"}}</div>
+	{{ post.content | truncatewords:10,"......"}}
+  {% endfor %}
+</body>
