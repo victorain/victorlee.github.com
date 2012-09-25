@@ -1,12 +1,21 @@
 <head>
+	<!--
 	<STYLE TYPE="text/css" MEDIA="screen, projection"> 
   	.item{font-size:150%!important;margin-top:1.5em!important;border-top:2px solid #e0e0e0!important;padding-top:.5em!important;color:#6D9D30;}
-	
-	.pindent p{text-indent:2em!important;}
+		{% if {{page.p-indent}} %}
+		p{text-indent:2em!important;}
+		{% endif %}
 	</STYLE> 
+	-->
 </head>
 
 <div class='post'>
+	<STYLE TYPE="text/css" MEDIA="screen, projection"> 
+  	.item{font-size:150%!important;margin-top:1.5em!important;border-top:2px solid #e0e0e0!important;padding-top:.5em!important;color:#6D9D30;}
+		{% if {{page.p-indent}} %}
+		p{text-indent:2em!important;}
+		{% endif %}
+	</STYLE>
   <!--
   <h1 style='border-bottom:1px solid #CCCCCC !important;padding-bottom:.5em!important;'><a href='{{page.url}}'>{{page.title}}</a></h1>
   -->
@@ -27,12 +36,7 @@
 	</div>
 	{% endif %}
 
-  
-	{% if {{page.p-indent}} %}
-  		<div class='pindent'>{{ content }}</div>
-	{% else %}
-  		<div class='body'>{{ content }}</div>
-	{% endif %}
+  <div class='body'>{{ content }}</div>
 
 </div>
 
