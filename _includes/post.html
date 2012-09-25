@@ -32,6 +32,8 @@
 </div>
 
 <!-- share to ... -->
+<br/>
+<br/>
 {% if {{page.share-off}} %}
 		<!--
 		trun off share to ... 
@@ -64,24 +66,16 @@
 {% endif %}
 
 <!-- discuss -->
+<br/>
+<br/>
 {% if {{page.discuss-off}} %}
 		<!--
 		trun off discuss 
 		-->
 {% else %}
-    <script type="text/javascript" charset="utf-8">
-  		var disqus_url = "http://eeevictor.github.com{{page.url}}";
-  		var disqus_developer = 1;
-		</script>
-
-		<br/>
-		<div id="disqus_thread"></div>
-		<script type="text/javascript" src="http://disqus.com/forums/eeevictor/embed.js"></script>
-		<!-- -->
-		<noscript><a href="http://disqus.com/forums/eeevictor/?url=ref">View the discussion thread.</a></noscript>
-		
-		<!--
-		<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-		-->
+		<!-- UY BEGIN -->
+		<div id="uyan_frame"></div>
+		<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=1594593" async=""></script>
+		<!-- UY END -->
 {% endif %}
 
