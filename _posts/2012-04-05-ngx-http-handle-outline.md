@@ -3,6 +3,7 @@ layout: post
 title: ngx 处理 http 请求的概要流程
 category: nginx
 original: true
+tags: nginx 
 ---
 
 本文介绍 ngx 处理 http 请求的概要流程。将介绍从 http 请求到来，到建立连接，

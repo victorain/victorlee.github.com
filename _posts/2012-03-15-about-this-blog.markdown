@@ -3,6 +3,7 @@ layout: post
 title: About this blog
 category: blog-log
 discuss-off: true
+tags: blog
 ---
 
 我的blog创建于2012年3月15日.

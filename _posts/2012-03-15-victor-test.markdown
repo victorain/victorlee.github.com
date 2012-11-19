@@ -3,6 +3,7 @@ layout: post
 title: test
 category: default
 original: true
+tags: blog
 ---
 
 # 代码语法高亮示例
