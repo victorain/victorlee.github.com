@@ -1,0 +1,53 @@
+---
+title: tags
+layout: default
+---
+
+<head>
+	<STYLE TYPE="text/css" MEDIA="screen, projection"> 
+	</STYLE> 
+</head>
+
+<div id='tag_cloud'>
+{% for tag in site.tags %}
+<a 
+	style="text-decoration:none!important;"
+	href="#{{ tag[0] }}" 
+	title="{{ tag[0] }}" 
+	rel="{{ tag[1].size }}"
+>
+	{{ tag[0] }}
+</a>
+{% endfor %}
+</div>
+
+<br/>
+
+<ul class="listing">
+{% for tag in site.tags %}
+	<!-- class="listing-seperator" -->
+  <div style="font-weight:700!important;color:#0C7823!important;" id="{{ tag[0] }}">{{ tag[0] }}</div>
+{% for post in tag[1] %}
+	<!--
+  <li class="listing-item">
+	-->
+  <li style="padding-bottom:.0em!important;">
+  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+  </li>
+{% endfor %}
+{% endfor %}
+</ul>
+
+<script src="/js/tagcloud/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script> 
+<script src="/js/tagcloud/jquery.tagcloud.js" type="text/javascript" charset="utf-8"></script> 
+<script language="javascript">
+$.fn.tagcloud.defaults = {
+    size: {start: 1, end: 1, unit: 'em'},
+      color: {start: '#f8e0e6', end: '#ff3333'}
+};
+
+$(function () {
+    $('#tag_cloud a').tagcloud();
+});
+</script>
